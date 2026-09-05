@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "continuous-reward-recovery-powered-1788526766-178959000-12842",
+  "nonce_hex": "af905da6bac6cafb58ecce4d309f0dc3b1399fc0dc7a6e32629a1f3c2bdd696a",
+  "actor_weights": {
+    "actor-01": {
+      "credit": 2.291098999098739,
+      "assignment": 3.1230632725203256,
+      "disruption": -3.174327414166118,
+      "rz4_cost": 18.534718423375015,
+      "time_cost": 1.0
+    },
+    "actor-02": {
+      "credit": 0.45078440912282614,
+      "assignment": 1.7897600272797343,
+      "disruption": -0.890446689464679,
+      "rz4_cost": 23.38091263150589,
+      "time_cost": 1.0
+    },
+    "actor-03": {
+      "credit": 2.7271509750661096,
+      "assignment": 5.827695953884273,
+      "disruption": -3.2349615861683167,
+      "rz4_cost": 2.3314406830611722,
+      "time_cost": 1.0
+    },
+    "actor-04": {
+      "credit": 1.470770282613304,
+      "assignment": 7.681282011447292,
+      "disruption": -3.2841306486843935,
+      "rz4_cost": 9.067777934464122,
+      "time_cost": 1.0
+    },
+    "actor-05": {
+      "credit": 1.5510229670639861,
+      "assignment": 14.130038345502385,
+      "disruption": 9.722616819098452,
+      "rz4_cost": 11.484322602233307,
+      "time_cost": 1.0
+    },
+    "actor-06": {
+      "credit": 1.4162585913861645,
+      "assignment": 8.990754783240877,
+      "disruption": 13.875237370426415,
+      "rz4_cost": 12.302051995811315,
+      "time_cost": 1.0
+    },
+    "actor-07": {
+      "credit": 2.4687361736681654,
+      "assignment": 8.948347195321418,
+      "disruption": -3.949299336564134,
+      "rz4_cost": 16.926780883482884,
+      "time_cost": 1.0
+    },
+    "actor-08": {
+      "credit": 1.0654505644034629,
+      "assignment": 3.9571426060736403,
+      "disruption": 0.27197208828237507,
+      "rz4_cost": 22.548785162085196,
+      "time_cost": 1.0
+    }
+  }
+}

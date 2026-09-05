@@ -1,0 +1,3744 @@
+{
+  "analysis_status": "BLINDED_DO_NOT_ADD_GROUND_TRUTH",
+  "created_at_utc": "2026-09-04T12:49:24.289595+00:00",
+  "source_archive": "../experiment-archive/runs/continuous-reward-recovery-pilot-1788525675-900390000-10570",
+  "run_id": "continuous-reward-recovery-pilot-1788525675-900390000-10570",
+  "source_trials_sha256": "d01e074f8a68867b7199c5a1e3758311426268b6ffbac2924e573268006c9317",
+  "sealed_ground_truth_sha256_commitment": "442ca5af0fa254847882c8bac4557c8b369a98482b0d39b4ca42a24d93bc73f1",
+  "method": {
+    "independent_analysis_particles": 4096,
+    "choice_beta": 1.0,
+    "choice_lapse": 0.02,
+    "prior_ranges": {
+      "credit": [
+        0.1,
+        3.0
+      ],
+      "assignment": [
+        0.0,
+        20.0
+      ],
+      "disruption": [
+        -5.0,
+        15.0
+      ],
+      "rz4_cost": [
+        0.0,
+        30.0
+      ]
+    },
+    "ground_truth_read": false
+  },
+  "quality": {
+    "trials": 160,
+    "first_response_valid_rate": 1.0,
+    "alpha_action_rate": 0.58125,
+    "listed_first_action_rate": 0.4125,
+    "active_and_random_scenario_ids_disjoint": true
+  },
+  "full_budget_pairs": [
+    {
+      "actor": "actor-01",
+      "mode": "explicit_cards",
+      "random_minus_active_log_loss": 0.04516758418244793
+    },
+    {
+      "actor": "actor-01",
+      "mode": "geometry_rules",
+      "random_minus_active_log_loss": 0.023854035033531132
+    },
+    {
+      "actor": "actor-02",
+      "mode": "explicit_cards",
+      "random_minus_active_log_loss": 0.08276490467735761
+    },
+    {
+      "actor": "actor-02",
+      "mode": "geometry_rules",
+      "random_minus_active_log_loss": -0.010152409181756882
+    }
+  ],
+  "mean_full_budget_random_minus_active_log_loss": 0.03540852867789495,
+  "actors": {
+    "actor-01": {
+      "explicit_cards": {
+        "active": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.381702298752673,
+                    "q05": 1.5797636528510435,
+                    "median": 2.459179449272391,
+                    "q95": 2.9454777519046624
+                  },
+                  "assignment": {
+                    "mean": 11.656687023069857,
+                    "q05": 4.301947221067801,
+                    "median": 11.6973455457088,
+                    "q95": 18.43190903201165
+                  },
+                  "disruption": {
+                    "mean": 4.198913178323809,
+                    "q05": -3.294384893163902,
+                    "median": 3.880417344690592,
+                    "q95": 12.69616242031898
+                  },
+                  "rz4_cost": {
+                    "mean": 5.068589957809285,
+                    "q05": 0.3448747627056137,
+                    "median": 4.103476540276883,
+                    "q95": 12.910331386190375
+                  }
+                },
+                "entropy_nats": 6.312087937519042,
+                "effective_sample_size": 450.7228006222912
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.03044897320969023,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9891080490943451,
+                    "log_loss": 0.0109517024731286,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899958571420191,
+                    "log_loss": 0.010054520567288557,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9808737408976743,
+                    "log_loss": 0.019311532187497146,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000000509225823,
+                    "log_loss": 0.010050336367870918,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02006649672174905,
+                    "log_loss": 0.02027056341739568,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03368541714785344,
+                    "log_loss": 0.03426584265729481,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9894258345311969,
+                    "log_loss": 0.010630469218328657,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899990534880773,
+                    "log_loss": 0.010051291926607708,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999995147455,
+                    "log_loss": 0.010050336343657514,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9773261547469648,
+                    "log_loss": 0.022934849745408856,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8235590680805547,
+                    "log_loss": 0.1941200038486731,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899682710722826,
+                    "log_loss": 0.010082385789031926,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9181806221106078,
+                    "log_loss": 0.08536115160381852,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9812436559231241,
+                    "log_loss": 0.018934475207693792,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899924376280608,
+                    "log_loss": 0.010057974642211486,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010005741493929748,
+                    "log_loss": 0.010056135359136464,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.5605407292387645,
+                    "q05": 1.7814043285349246,
+                    "median": 2.709208700369651,
+                    "q95": 2.9635259225672743
+                  },
+                  "assignment": {
+                    "mean": 15.543292927248766,
+                    "q05": 11.333082046962595,
+                    "median": 15.68189194222046,
+                    "q95": 18.768525697475607
+                  },
+                  "disruption": {
+                    "mean": 2.01289413104717,
+                    "q05": -4.169401223827078,
+                    "median": 2.161264725177201,
+                    "q95": 8.490916692347392
+                  },
+                  "rz4_cost": {
+                    "mean": 3.662326803682651,
+                    "q05": 0.6542790269539567,
+                    "median": 3.0719830930109895,
+                    "q95": 8.726785512031055
+                  }
+                },
+                "entropy_nats": 4.572941957331958,
+                "effective_sample_size": 71.32968091156636
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.021840170192925664,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899523670970675,
+                    "log_loss": 0.010098451054385352,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999092131325,
+                    "log_loss": 0.010050427557412188,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898566803160347,
+                    "log_loss": 0.010195113690847501,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000000000534118,
+                    "log_loss": 0.010050335854040974,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.015003887583545723,
+                    "log_loss": 0.015117584603162393,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01008851147653039,
+                    "log_loss": 0.010139745382263062,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899651624388043,
+                    "log_loss": 0.010085525928418116,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999806298768,
+                    "log_loss": 0.010050355419282623,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999999998171,
+                    "log_loss": 0.01005033585368615,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899495191934451,
+                    "log_loss": 0.010101327867263902,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9467977828870873,
+                    "log_loss": 0.05466974303591679,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899974541573351,
+                    "log_loss": 0.010052907415055289,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8620212963587917,
+                    "log_loss": 0.1484753028709675,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898507735063641,
+                    "log_loss": 0.010201081046942687,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899964928410684,
+                    "log_loss": 0.010053878444555816,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000268496981293,
+                    "log_loss": 0.010050607062610262,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.7412191550671334,
+                    "q05": 2.1941559692783112,
+                    "median": 2.7759833310468394,
+                    "q95": 2.9635259225672743
+                  },
+                  "assignment": {
+                    "mean": 16.26337067632089,
+                    "q05": 12.605621049320817,
+                    "median": 16.506805556164903,
+                    "q95": 18.768525697475607
+                  },
+                  "disruption": {
+                    "mean": 0.7713373934001739,
+                    "q05": -2.175019318487754,
+                    "median": 0.6777756434475073,
+                    "q95": 3.91992002979495
+                  },
+                  "rz4_cost": {
+                    "mean": 1.5626245473967477,
+                    "q05": 0.0755835997948584,
+                    "median": 1.1752696497558945,
+                    "q95": 3.9000915184146234
+                  }
+                },
+                "entropy_nats": 2.9359191965783658,
+                "effective_sample_size": 11.997412817197565
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.0202020408198933,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999689087773,
+                    "log_loss": 0.010050367258777405,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999999461144,
+                    "log_loss": 0.010050335907931312,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899991578041,
+                    "log_loss": 0.01005118655679261,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000000000000273,
+                    "log_loss": 0.010050335853501674,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010597925454723696,
+                    "log_loss": 0.010654483419677641,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010035169938234343,
+                    "log_loss": 0.0100858616746717,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999831806141,
+                    "log_loss": 0.010050352842780266,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999999882393,
+                    "log_loss": 0.010050335865380948,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999999999952,
+                    "log_loss": 0.010050335853506273,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899888930971288,
+                    "log_loss": 0.010061555010245252,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9879876589958881,
+                    "log_loss": 0.012085072207131174,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899997657325118,
+                    "log_loss": 0.0100505724873559,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8438461369494653,
+                    "log_loss": 0.1697851031978211,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899983719451222,
+                    "log_loss": 0.010051980354730207,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989995938135822,
+                    "log_loss": 0.010054438755027437,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01000000001926579,
+                    "log_loss": 0.010050335872961865,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "random": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.7016728364273712,
+                    "q05": 0.34296424300700745,
+                    "median": 1.7842640209748641,
+                    "q95": 2.8825333894489664
+                  },
+                  "assignment": {
+                    "mean": 10.485386861257926,
+                    "q05": 1.201148681327051,
+                    "median": 10.645709112452021,
+                    "q95": 19.087847562767408
+                  },
+                  "disruption": {
+                    "mean": 4.884826096709426,
+                    "q05": -4.169401223827078,
+                    "median": 4.809072729905477,
+                    "q95": 13.856384127012397
+                  },
+                  "rz4_cost": {
+                    "mean": 3.201903548252099,
+                    "q05": 0.1516368558738368,
+                    "median": 1.9058188776114893,
+                    "q95": 14.131363656970509
+                  }
+                },
+                "entropy_nats": 6.843492219239094,
+                "effective_sample_size": 652.8398897458225
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.11863998285998387,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8574660375358312,
+                    "log_loss": 0.1537737070986037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9775443500431281,
+                    "log_loss": 0.022711617263733223,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9104274464583726,
+                    "log_loss": 0.09384106837296906,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010029261449773655,
+                    "log_loss": 0.010079893310292172,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.2654282665667545,
+                    "log_loss": 0.3084676251917252,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.09713189865554968,
+                    "log_loss": 0.1021788034051512,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8165038253556881,
+                    "log_loss": 0.20272368151745054,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9886031785400998,
+                    "log_loss": 0.011462262921143369,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999683350905,
+                    "log_loss": 0.010050367838259005,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9310562271058236,
+                    "log_loss": 0.07143560921528135,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.5147329279539665,
+                    "log_loss": 0.664107099328037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9859914273801899,
+                    "log_loss": 0.014107618757875874,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9364478756572292,
+                    "log_loss": 0.0656614173151966,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8662251062992212,
+                    "log_loss": 0.143610466207865,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899351693100477,
+                    "log_loss": 0.010115823543179789,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.013816330627579509,
+                    "log_loss": 0.013912664472978863,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.9684544028241928,
+                    "q05": 0.8554669370790697,
+                    "median": 2.03477033043357,
+                    "q95": 2.884696395993194
+                  },
+                  "assignment": {
+                    "mean": 11.415713676326122,
+                    "q05": 3.855594767245203,
+                    "median": 11.392752534165282,
+                    "q95": 19.06901830409079
+                  },
+                  "disruption": {
+                    "mean": 4.508155027030684,
+                    "q05": -4.161346068381302,
+                    "median": 4.236877253779044,
+                    "q95": 13.438186493848278
+                  },
+                  "rz4_cost": {
+                    "mean": 2.823973380939746,
+                    "q05": 0.2231700170405948,
+                    "median": 1.9610255388681241,
+                    "q95": 8.067001131592678
+                  }
+                },
+                "entropy_nats": 6.418309208707979,
+                "effective_sample_size": 426.9109181507132
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.06393219018792105,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9752130491439586,
+                    "log_loss": 0.025099319912025554,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.988671343153835,
+                    "log_loss": 0.011393314868645569,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9549414729768666,
+                    "log_loss": 0.04610522522037678,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010001644759230204,
+                    "log_loss": 0.010051997227841275,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.14131194685743304,
+                    "log_loss": 0.1523495741260347,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03562167209031827,
+                    "log_loss": 0.03627160502459287,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9573040851136841,
+                    "log_loss": 0.04363418971031851,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899817413402577,
+                    "log_loss": 0.01006877911422608,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999942350247,
+                    "log_loss": 0.010050341676708815,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9733127986394549,
+                    "log_loss": 0.027049769898701538,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.604409977553686,
+                    "log_loss": 0.5035025405237723,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9896928394492491,
+                    "log_loss": 0.010360647177657273,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.924919312877644,
+                    "log_loss": 0.07804877459587638,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9619706439192476,
+                    "log_loss": 0.038771344458501104,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899771502978041,
+                    "log_loss": 0.010073416627129047,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010033527753174079,
+                    "log_loss": 0.010084202844329098,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.9657992349073365,
+                    "q05": 0.8768531953246176,
+                    "median": 2.0270435575686707,
+                    "q95": 2.884696395993194
+                  },
+                  "assignment": {
+                    "mean": 11.906773284409335,
+                    "q05": 4.678444207833707,
+                    "median": 11.686629518046761,
+                    "q95": 19.076627143446427
+                  },
+                  "disruption": {
+                    "mean": 4.546985265425525,
+                    "q05": -4.148434107011165,
+                    "median": 4.303367725412423,
+                    "q95": 13.438186493848278
+                  },
+                  "rz4_cost": {
+                    "mean": 2.7608555450072028,
+                    "q05": 0.2528131915165899,
+                    "median": 1.9645384091546503,
+                    "q95": 7.501361072996029
+                  }
+                },
+                "entropy_nats": 6.328419621787628,
+                "effective_sample_size": 395.24136694468353
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.06536962500234123,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9742469626106406,
+                    "log_loss": 0.02609045243752343,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9890109549533133,
+                    "log_loss": 0.011049870622679939,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9586374181426648,
+                    "log_loss": 0.042242358861664595,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000750874020484,
+                    "log_loss": 0.010051094312395661,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.15012754136678153,
+                    "log_loss": 0.16266898942300415,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02193911061768716,
+                    "log_loss": 0.022183351803216466,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9557972634837852,
+                    "log_loss": 0.04520945590580486,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899896715378885,
+                    "log_loss": 0.010060768697934963,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999958179052,
+                    "log_loss": 0.010050340077839622,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9819882887988612,
+                    "log_loss": 0.018175896565524957,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.5822693210434431,
+                    "log_loss": 0.5408221873531421,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9897253089396852,
+                    "log_loss": 0.010327840071725205,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9257770683670424,
+                    "log_loss": 0.07712182022398738,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9610683160344046,
+                    "log_loss": 0.039709784053178654,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899774606961227,
+                    "log_loss": 0.010073103086286362,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01002608683746463,
+                    "log_loss": 0.010076686541551149,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "paired_full_budget_random_minus_active_log_loss": 0.04516758418244793
+      },
+      "geometry_rules": {
+        "active": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.3908850221177325,
+                    "q05": 1.469476951210546,
+                    "median": 2.4602227845181623,
+                    "q95": 2.9509758165515754
+                  },
+                  "assignment": {
+                    "mean": 6.029181267414106,
+                    "q05": 0.5058284858122941,
+                    "median": 5.198894156124762,
+                    "q95": 13.847859043088897
+                  },
+                  "disruption": {
+                    "mean": -0.7779399591090742,
+                    "q05": -4.614714965825975,
+                    "median": -1.0457968440834065,
+                    "q95": 3.5467673009645573
+                  },
+                  "rz4_cost": {
+                    "mean": 8.374180038641304,
+                    "q05": 1.0608567284369863,
+                    "median": 7.79837767059237,
+                    "q95": 17.883446958635396
+                  }
+                },
+                "entropy_nats": 6.062519298042262,
+                "effective_sample_size": 359.86793068473787
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.16985435822735548,
+                "accuracy": 0.875,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010018107349585855,
+                    "log_loss": 0.01006862627287707,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.0159697396373174,
+                    "log_loss": 0.01609863000162882,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899922246092322,
+                    "log_loss": 0.0100581898144122,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01707909806134513,
+                    "log_loss": 0.017226628055588472,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999758970963,
+                    "log_loss": 0.010050360199869093,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8829599610380429,
+                    "log_loss": 0.12447542364403512,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01017351105613622,
+                    "log_loss": 0.010225614907044121,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01000098343608389,
+                    "log_loss": 0.010051329223776561,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.3856447724573003,
+                    "log_loss": 0.9528386118416727,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899966186757369,
+                    "log_loss": 0.01005375133838789,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010001018388855205,
+                    "log_loss": 0.010051364529641896,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899984058284501,
+                    "log_loss": 0.010051946129090751,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.2242661963310433,
+                    "log_loss": 1.4949215562096263,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010048223304048007,
+                    "log_loss": 0.010099047448021167,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010002801495054649,
+                    "log_loss": 0.01005316565048977,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.011281369050833174,
+                    "log_loss": 0.011345486371525496,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.2550094428580394,
+                    "q05": 1.3152573351789911,
+                    "median": 2.3339254084657526,
+                    "q95": 2.943258650529622
+                  },
+                  "assignment": {
+                    "mean": 5.805316637126158,
+                    "q05": 1.4723613360911725,
+                    "median": 6.2888004892999465,
+                    "q95": 10.21774691660199
+                  },
+                  "disruption": {
+                    "mean": -1.0252772030409896,
+                    "q05": -4.676451212145924,
+                    "median": -0.9537736452210854,
+                    "q95": 2.9251684855310085
+                  },
+                  "rz4_cost": {
+                    "mean": 5.209234251421461,
+                    "q05": 1.3085399729455527,
+                    "median": 4.987554263478837,
+                    "q95": 9.472532862997033
+                  }
+                },
+                "entropy_nats": 4.712711985034985,
+                "effective_sample_size": 77.50799147120347
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.13996042861684416,
+                "accuracy": 0.875,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010005451666497698,
+                    "log_loss": 0.010055842602499605,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.022514105734210022,
+                    "log_loss": 0.02277141764536484,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899996768647484,
+                    "log_loss": 0.010050662252798714,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010133040852794454,
+                    "log_loss": 0.010184729583726605,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999527257488,
+                    "log_loss": 0.01005038360527146,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9816102463554683,
+                    "log_loss": 0.018560947217474064,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010002649065461415,
+                    "log_loss": 0.010053011680779893,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01000002971558479,
+                    "log_loss": 0.010050365869244094,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.4210746353843155,
+                    "log_loss": 0.8649451798143112,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899998206363486,
+                    "log_loss": 0.010050517028923293,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000748202005685,
+                    "log_loss": 0.010051091613388739,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999134274864,
+                    "log_loss": 0.01005042330048871,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.29768386097226557,
+                    "log_loss": 1.2117232248173693,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000707374364459,
+                    "log_loss": 0.010051050373316736,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000574235499484,
+                    "log_loss": 0.010050915889527737,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010610402879305845,
+                    "log_loss": 0.010667094575021512,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.356690007690531,
+                    "q05": 1.8435457914157152,
+                    "median": 2.3816276552018616,
+                    "q95": 2.863588306763281
+                  },
+                  "assignment": {
+                    "mean": 7.7504105542838015,
+                    "q05": 5.027967025416293,
+                    "median": 7.676561340666817,
+                    "q95": 10.735679062916784
+                  },
+                  "disruption": {
+                    "mean": 1.002396444430228,
+                    "q05": -1.3890436533563189,
+                    "median": 1.0422611565440025,
+                    "q95": 3.5202807312392785
+                  },
+                  "rz4_cost": {
+                    "mean": 5.821632607798152,
+                    "q05": 3.7709903114391343,
+                    "median": 5.802034976407258,
+                    "q95": 8.880205023098426
+                  }
+                },
+                "entropy_nats": 3.666913682668959,
+                "effective_sample_size": 24.799319275011765
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.11972384131905793,
+                "accuracy": 0.875,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000014078420223,
+                    "log_loss": 0.010050350074128023,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010801805709065276,
+                    "log_loss": 0.010860568760182623,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999963335414,
+                    "log_loss": 0.010050339556994973,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010002810862392618,
+                    "log_loss": 0.010053175112474184,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989999999706671,
+                    "log_loss": 0.010050336149793398,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9825905842339012,
+                    "log_loss": 0.017562741795128737,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01000002763434876,
+                    "log_loss": 0.010050363766985372,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000000384261938,
+                    "log_loss": 0.01005033624164484,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.34347280680493036,
+                    "log_loss": 1.0686473355046,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989999999897511,
+                    "log_loss": 0.01005033595702571,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000018338627948,
+                    "log_loss": 0.010050354377368237,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999901155955,
+                    "log_loss": 0.010050345837748487,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.4977058206974432,
+                    "log_loss": 0.6977460979932437,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000022771949668,
+                    "log_loss": 0.010050358855471068,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000026625469012,
+                    "log_loss": 0.010050362747914996,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010156132982346563,
+                    "log_loss": 0.010208058374222615,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "random": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.9679539766861143,
+                    "q05": 0.761792753228902,
+                    "median": 2.0342464926342183,
+                    "q95": 2.9135765164987455
+                  },
+                  "assignment": {
+                    "mean": 10.041388952545256,
+                    "q05": 0.9465576207138326,
+                    "median": 10.131204681148127,
+                    "q95": 18.89576389219136
+                  },
+                  "disruption": {
+                    "mean": 2.6373001609751294,
+                    "q05": -4.274161412318751,
+                    "median": 2.531899855739816,
+                    "q95": 10.22382912992767
+                  },
+                  "rz4_cost": {
+                    "mean": 13.490255686122808,
+                    "q05": 1.3167693195639985,
+                    "median": 12.778924928582352,
+                    "q95": 27.63631753891158
+                  }
+                },
+                "entropy_nats": 7.864818944033486,
+                "effective_sample_size": 2451.1970625860586
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.23437669748082782,
+                "accuracy": 0.8125,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010994052839393434,
+                    "log_loss": 0.011054934070521454,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.085505594075502,
+                    "log_loss": 0.08938392825631426,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9894877934061059,
+                    "log_loss": 0.010567850138794766,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1135589127208715,
+                    "log_loss": 0.12054061108602757,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899983109856334,
+                    "log_loss": 0.010052041930074565,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.29956010199408784,
+                    "log_loss": 1.2054402071213657,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03099284494377544,
+                    "log_loss": 0.031483283159680006,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010057529863612226,
+                    "log_loss": 0.010108448515355115,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.4709661375777484,
+                    "log_loss": 0.7529690822896576,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898814510401774,
+                    "log_loss": 0.010170089447740078,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010069631877451506,
+                    "log_loss": 0.01012067355688866,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9830572396757175,
+                    "log_loss": 0.017087930951693746,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.25887088709254336,
+                    "log_loss": 1.3514258470119385,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03747252313419656,
+                    "log_loss": 0.038192665834624315,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01015030544672701,
+                    "log_loss": 0.010202171063446194,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.06874989381025935,
+                    "log_loss": 0.07122739525912254,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.6437317665019981,
+                    "q05": 0.4736430617907734,
+                    "median": 1.660833344279627,
+                    "q95": 2.8450773151462045
+                  },
+                  "assignment": {
+                    "mean": 14.244447167207849,
+                    "q05": 6.795412420081668,
+                    "median": 14.688657460828306,
+                    "q95": 19.460471089303965
+                  },
+                  "disruption": {
+                    "mean": 5.425730145780928,
+                    "q05": -0.8954934959289833,
+                    "median": 5.569923078099656,
+                    "q95": 11.001760778234324
+                  },
+                  "rz4_cost": {
+                    "mean": 4.2866224379486635,
+                    "q05": 0.27694733598149335,
+                    "median": 3.742137808138495,
+                    "q95": 10.681913425304131
+                  }
+                },
+                "entropy_nats": 6.25173952178614,
+                "effective_sample_size": 384.35961202847767
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.16173741805386366,
+                "accuracy": 0.9375,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010362118448384363,
+                    "log_loss": 0.01041617897642598,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1853355939767735,
+                    "log_loss": 0.2049790222931839,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9889819645163019,
+                    "log_loss": 0.011079183606288769,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.0100851190376078,
+                    "log_loss": 0.01013631837575901,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899931344963017,
+                    "log_loss": 0.010057270729768182,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.32139906088857284,
+                    "log_loss": 1.1350717476227172,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01087335192672885,
+                    "log_loss": 0.01093289886104642,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010087438227049507,
+                    "log_loss": 0.01013866119553376,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.5504588362956745,
+                    "log_loss": 0.5970031007365917,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899554690573328,
+                    "log_loss": 0.010095317615334628,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01019116007845121,
+                    "log_loss": 0.010243445486300988,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9434086578287787,
+                    "log_loss": 0.05825573091229019,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8515442198833163,
+                    "log_loss": 0.16070384847992475,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.10718006962419929,
+                    "log_loss": 0.11337036415465755,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010026877272700753,
+                    "log_loss": 0.010077484982339539,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.20167389716161557,
+                    "log_loss": 0.22523811483365577,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.74642190102825,
+                    "q05": 0.6767386661045776,
+                    "median": 1.7233568370358854,
+                    "q95": 2.8702154819047014
+                  },
+                  "assignment": {
+                    "mean": 14.178581863270065,
+                    "q05": 6.789035298746844,
+                    "median": 14.597390141332598,
+                    "q95": 19.46379484706631
+                  },
+                  "disruption": {
+                    "mean": 5.561630034679319,
+                    "q05": -0.8787669527232982,
+                    "median": 5.650550299912027,
+                    "q95": 11.119802199353273
+                  },
+                  "rz4_cost": {
+                    "mean": 4.479743496626533,
+                    "q05": 0.2754038379351986,
+                    "median": 4.000134798081083,
+                    "q95": 10.94845660729822
+                  }
+                },
+                "entropy_nats": 6.183949959017693,
+                "effective_sample_size": 354.71995349752905
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.14357787635258906,
+                "accuracy": 0.9375,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010057930375435283,
+                    "log_loss": 0.010108853096344558,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.12787552641564595,
+                    "log_loss": 0.13682312032406052,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989862918904457,
+                    "log_loss": 0.010188811193842592,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010064048072586328,
+                    "log_loss": 0.010115032969129157,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899986413440508,
+                    "log_loss": 0.010051708234189822,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.34840381883918725,
+                    "log_loss": 1.054393072986975,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010138267323764721,
+                    "log_loss": 0.010190009570819728,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010010538798706425,
+                    "log_loss": 0.010060981161381108,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.5356532520535151,
+                    "log_loss": 0.6242682450635575,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989995470313215,
+                    "log_loss": 0.010054911305165776,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010052807234244699,
+                    "log_loss": 0.010103677916815249,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9830896684734192,
+                    "log_loss": 0.017054943795372677,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8628049847126044,
+                    "log_loss": 0.14756658711641116,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.044547837210437716,
+                    "log_loss": 0.04557058166284048,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010010879134424793,
+                    "log_loss": 0.010061324938552708,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.16525931588122042,
+                    "log_loss": 0.18063416030596685,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "paired_full_budget_random_minus_active_log_loss": 0.023854035033531132
+      }
+    },
+    "actor-02": {
+      "explicit_cards": {
+        "active": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.0660803990592664,
+                    "q05": 1.1243049660332505,
+                    "median": 2.077686235098876,
+                    "q95": 2.8608989323215255
+                  },
+                  "assignment": {
+                    "mean": 6.526275893004611,
+                    "q05": 0.6496712995755449,
+                    "median": 6.0523537930523785,
+                    "q95": 14.692531094435191
+                  },
+                  "disruption": {
+                    "mean": 1.8604095638082678,
+                    "q05": -4.530885807719622,
+                    "median": 1.0999342919854023,
+                    "q95": 10.86087977451368
+                  },
+                  "rz4_cost": {
+                    "mean": 23.728538488605086,
+                    "q05": 14.251265377532402,
+                    "median": 24.605356414129343,
+                    "q95": 29.554000080883778
+                  }
+                },
+                "entropy_nats": 6.310537103825793,
+                "effective_sample_size": 430.11966674574614
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.08757018324982664,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.2409441936557304,
+                    "log_loss": 0.2756799781441389,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899035184566598,
+                    "log_loss": 0.010147796707040177,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.029200977733134362,
+                    "log_loss": 0.02963581227186905,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.976353664070402,
+                    "log_loss": 0.023930397477966537,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9786066370025231,
+                    "log_loss": 0.021625518009786345,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000700440784752,
+                    "log_loss": 0.010051043369695888,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9810680951150825,
+                    "log_loss": 0.019113407845096714,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.046393909038238666,
+                    "log_loss": 0.04750459535738891,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9895657371353498,
+                    "log_loss": 0.01048908144650696,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9875768293064979,
+                    "log_loss": 0.012500983403900483,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9810783516972872,
+                    "log_loss": 0.019102953393828396,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1850746800931001,
+                    "log_loss": 0.2046588019558178,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9897431073747273,
+                    "log_loss": 0.010309857026483559,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1379932155262946,
+                    "log_loss": 0.14849213773026934,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9832513507376115,
+                    "log_loss": 0.016890493923273096,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.4178284259566665,
+                    "log_loss": 0.5409900739341641,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.0143989546169494,
+                    "q05": 1.3168336229116615,
+                    "median": 2.0556568094914986,
+                    "q95": 2.4724158643811758
+                  },
+                  "assignment": {
+                    "mean": 8.906971023840946,
+                    "q05": 4.371916431497816,
+                    "median": 9.034607072312648,
+                    "q95": 13.965431089593128
+                  },
+                  "disruption": {
+                    "mean": 10.680527510745755,
+                    "q05": 6.854237283217559,
+                    "median": 10.988272519456503,
+                    "q95": 13.948517022688758
+                  },
+                  "rz4_cost": {
+                    "mean": 24.783551034534906,
+                    "q05": 16.536718998665634,
+                    "median": 25.33867587639095,
+                    "q95": 29.59043659951997
+                  }
+                },
+                "entropy_nats": 4.4016623905851695,
+                "effective_sample_size": 49.23342964958208
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.08707662143015607,
+                "accuracy": 0.9375,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010194348094965446,
+                    "log_loss": 0.010246666332104437,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899855067829841,
+                    "log_loss": 0.01006497557380896,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.14621152142571095,
+                    "log_loss": 0.1580717990403887,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9867224820501179,
+                    "log_loss": 0.01336645228675295,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9887396393112661,
+                    "log_loss": 0.011324238527850588,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010001293147792432,
+                    "log_loss": 0.010051642064245858,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899954175619705,
+                    "log_loss": 0.010054964589496332,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.11641964538429551,
+                    "log_loss": 0.12377304102907903,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899598648268004,
+                    "log_loss": 0.01009087725428239,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.987576829306498,
+                    "log_loss": 0.01250098340390037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9892768336611485,
+                    "log_loss": 0.010781073826818104,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.05994363143972439,
+                    "log_loss": 0.061815438962524644,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899610961676828,
+                    "log_loss": 0.010089633425961335,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.04138253116216285,
+                    "log_loss": 0.0422631691409486,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9837744475000836,
+                    "log_loss": 0.016358628225047966,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.5861999360797266,
+                    "log_loss": 0.8823723591992869,
+                    "correct_at_0_5": false
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.9895522869125597,
+                    "q05": 1.2718101199388234,
+                    "median": 1.88977598512782,
+                    "q95": 2.7499162621484605
+                  },
+                  "assignment": {
+                    "mean": 7.0920040218676546,
+                    "q05": 1.9366061663686662,
+                    "median": 7.124032821699549,
+                    "q95": 11.236195308782769
+                  },
+                  "disruption": {
+                    "mean": 8.386421954626464,
+                    "q05": 4.078194238724054,
+                    "median": 8.590773136566312,
+                    "q95": 12.582843200557026
+                  },
+                  "rz4_cost": {
+                    "mean": 21.990909708245578,
+                    "q05": 13.909330814793156,
+                    "median": 22.22999438377836,
+                    "q95": 28.55993654298953
+                  }
+                },
+                "entropy_nats": 4.164511755668559,
+                "effective_sample_size": 30.33383404494873
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.03827237215868202,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.011068316249370007,
+                    "log_loss": 0.011130025831607165,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899943631039629,
+                    "log_loss": 0.010056029704092249,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03931027549759962,
+                    "log_loss": 0.04010378946792495,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9883173646816674,
+                    "log_loss": 0.011751413500718995,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899814567240528,
+                    "log_loss": 0.010069066610685826,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000000577416129,
+                    "log_loss": 0.010050336436750051,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899944761282592,
+                    "log_loss": 0.010055915537492906,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.09860886622701422,
+                    "log_loss": 0.10381600483677057,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989999615074891,
+                    "log_loss": 0.010050724666818462,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.987576829306498,
+                    "log_loss": 0.01250098340390037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989991357237561,
+                    "log_loss": 0.010059065954678318,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02709978831598528,
+                    "log_loss": 0.027473759420333945,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899846817748168,
+                    "log_loss": 0.010065808927939346,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02685684787360061,
+                    "log_loss": 0.027224083130314432,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989770073641681,
+                    "log_loss": 0.010282611674228238,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.257452424369423,
+                    "log_loss": 0.2976683354346565,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "random": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.8712868392126267,
+                    "q05": 0.6478888743184885,
+                    "median": 1.9293432284542305,
+                    "q95": 2.8812085538769074
+                  },
+                  "assignment": {
+                    "mean": 8.60069386608266,
+                    "q05": 0.7588465913742826,
+                    "median": 8.019944238573906,
+                    "q95": 18.318138376165617
+                  },
+                  "disruption": {
+                    "mean": 4.826061192548275,
+                    "q05": -3.971140351000537,
+                    "median": 4.673457396442311,
+                    "q95": 13.927380711047995
+                  },
+                  "rz4_cost": {
+                    "mean": 15.16211467568539,
+                    "q05": 1.7014845041204896,
+                    "median": 15.256857308071712,
+                    "q95": 28.65299577838406
+                  }
+                },
+                "entropy_nats": 8.08400276212693,
+                "effective_sample_size": 3156.7701908943404
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.12295868211984029,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.17242365168004414,
+                    "log_loss": 0.18925391215620216,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9897281234867714,
+                    "log_loss": 0.010324996309866434,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.4637771115770493,
+                    "log_loss": 0.6232053677374341,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9367754520300936,
+                    "log_loss": 0.06531167110889882,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9370984376318764,
+                    "log_loss": 0.06496694609110208,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01122128362350234,
+                    "log_loss": 0.01128471721051441,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9828186559399886,
+                    "log_loss": 0.01733065607735633,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1391874971878995,
+                    "log_loss": 0.14987856503778857,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9891420840509793,
+                    "log_loss": 0.010917293319233218,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9875768293064979,
+                    "log_loss": 0.012500983403900483,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9535663371543417,
+                    "log_loss": 0.04754628409705324,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1524933201362178,
+                    "log_loss": 0.1654565579134225,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9892712622438733,
+                    "log_loss": 0.010786705650766929,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1609069022189001,
+                    "log_loss": 0.17543361588050044,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9331407693995126,
+                    "log_loss": 0.0691992112740634,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.2910295492275427,
+                    "log_loss": 0.34394143064934146,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.7801159605801102,
+                    "q05": 0.6478888743184885,
+                    "median": 1.7952747155712543,
+                    "q95": 2.8387520127169688
+                  },
+                  "assignment": {
+                    "mean": 9.461430959246448,
+                    "q05": 1.0902156985284006,
+                    "median": 9.247388674780035,
+                    "q95": 18.67254197506366
+                  },
+                  "disruption": {
+                    "mean": 4.580243811274025,
+                    "q05": -3.966454084697162,
+                    "median": 4.300186425509159,
+                    "q95": 13.714553693717477
+                  },
+                  "rz4_cost": {
+                    "mean": 19.099776331971576,
+                    "q05": 6.037178792543831,
+                    "median": 19.90860311261245,
+                    "q95": 29.073873436068656
+                  }
+                },
+                "entropy_nats": 7.793211940701431,
+                "effective_sample_size": 2269.245190343847
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.1293814426553637,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.18394952832256392,
+                    "log_loss": 0.20327907338494236,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898008815502132,
+                    "log_loss": 0.010251485830060999,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.34873729500664774,
+                    "log_loss": 0.4288421774778228,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9349444131854344,
+                    "log_loss": 0.06726820259931185,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9329372242927852,
+                    "log_loss": 0.06941736411464416,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01020795609666701,
+                    "log_loss": 0.010260414581792351,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.982642636535578,
+                    "log_loss": 0.017509768640452866,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.10962039565932948,
+                    "log_loss": 0.11610738545939847,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989654537933854,
+                    "log_loss": 0.010399348333237652,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.987576829306498,
+                    "log_loss": 0.01250098340390037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9459197267912413,
+                    "log_loss": 0.055597568931061166,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.2063924307337046,
+                    "log_loss": 0.23116618517100246,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9894628039320252,
+                    "log_loss": 0.010593105417138385,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.21321841214113535,
+                    "log_loss": 0.23980459403888113,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9391425668399356,
+                    "log_loss": 0.06278798292809626,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.4080407270599716,
+                    "log_loss": 0.524317442174076,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.9964942154675427,
+                    "q05": 1.2088646979600013,
+                    "median": 2.011449792137247,
+                    "q95": 2.7843395875212784
+                  },
+                  "assignment": {
+                    "mean": 11.656638829818007,
+                    "q05": 2.7597872563182335,
+                    "median": 11.759231163327117,
+                    "q95": 19.082497854391185
+                  },
+                  "disruption": {
+                    "mean": 10.424038435133589,
+                    "q05": 4.741593694892877,
+                    "median": 10.86087977451368,
+                    "q95": 14.611937730887327
+                  },
+                  "rz4_cost": {
+                    "mean": 19.6887916493113,
+                    "q05": 9.172977215804023,
+                    "median": 19.69480734933867,
+                    "q95": 29.064665744063344
+                  }
+                },
+                "entropy_nats": 6.61784714896652,
+                "effective_sample_size": 588.8343209662759
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.12103727683603964,
+                "accuracy": 0.9375,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.012500998512051765,
+                    "log_loss": 0.012579793358816168,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899850165766785,
+                    "log_loss": 0.010065470739065083,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.6437486939563238,
+                    "log_loss": 1.0321188813184847,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9853647245707982,
+                    "log_loss": 0.01474342759422812,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9848475762990212,
+                    "log_loss": 0.015268394658361668,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010003033073675723,
+                    "log_loss": 0.01005339956897812,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899892204367016,
+                    "log_loss": 0.010061224360557215,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.1371455521430877,
+                    "log_loss": 0.14750926045810553,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899870971221569,
+                    "log_loss": 0.01006336914837695,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.987576829306498,
+                    "log_loss": 0.01250098340390037,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.980115452721722,
+                    "log_loss": 0.020084905356726617,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.10517689527069196,
+                    "log_loss": 0.11112922858943218,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899594214473841,
+                    "log_loss": 0.010091325130536101,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.08995319119843151,
+                    "log_loss": 0.09425924255066052,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9732877240563661,
+                    "log_loss": 0.027075532332028557,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.329003924531928,
+                    "log_loss": 0.3989919908083762,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "paired_full_budget_random_minus_active_log_loss": 0.08276490467735761
+      },
+      "geometry_rules": {
+        "active": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.385869676568521,
+                    "q05": 0.37907349008358726,
+                    "median": 1.3319569352795249,
+                    "q95": 2.4896408565240855
+                  },
+                  "assignment": {
+                    "mean": 7.163819920814591,
+                    "q05": 0.9088900539655609,
+                    "median": 6.666014611622568,
+                    "q95": 14.914567334263397
+                  },
+                  "disruption": {
+                    "mean": 6.6464392364326565,
+                    "q05": -1.5381504118286848,
+                    "median": 7.035364705256438,
+                    "q95": 13.856838101850336
+                  },
+                  "rz4_cost": {
+                    "mean": 16.691512275378223,
+                    "q05": 2.821936466884317,
+                    "median": 16.945485653784583,
+                    "q95": 28.60062750472032
+                  }
+                },
+                "entropy_nats": 6.44077255470505,
+                "effective_sample_size": 374.7113971673696
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.11211793637297547,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.025357254958556296,
+                    "log_loss": 0.02568429047290325,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9864569665845444,
+                    "log_loss": 0.013635576787679416,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899350217023393,
+                    "log_loss": 0.010115972651650698,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.08308529039448972,
+                    "log_loss": 0.08674082129620214,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.876674363522796,
+                    "log_loss": 0.13161966283317994,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.013543033415455572,
+                    "log_loss": 0.013635576787679416,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.7557493000055437,
+                    "log_loss": 0.2800455715478828,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9325108125413843,
+                    "log_loss": 0.06987453231274775,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.26685766309772885,
+                    "log_loss": 0.3104154119054685,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.969851767972755,
+                    "log_loss": 0.03061203568527612,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.6473567225180425,
+                    "log_loss": 0.4348577878584382,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898061644168946,
+                    "log_loss": 0.010246148541842897,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9602455222261395,
+                    "log_loss": 0.04056627490040905,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.21117397963253864,
+                    "log_loss": 0.23720948895651547,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.017841821646061407,
+                    "log_loss": 0.018002905845797935,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9225396494255979,
+                    "log_loss": 0.08062492358393389,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 2.1678397957283186,
+                    "q05": 1.449281137320981,
+                    "median": 2.1728923382562426,
+                    "q95": 2.789295044370983
+                  },
+                  "assignment": {
+                    "mean": 8.782730082712915,
+                    "q05": 3.3046922518324973,
+                    "median": 8.781053860743459,
+                    "q95": 14.409369990282954
+                  },
+                  "disruption": {
+                    "mean": 6.973851348801706,
+                    "q05": 2.2593699079486544,
+                    "median": 6.845446572688914,
+                    "q95": 11.117038061437498
+                  },
+                  "rz4_cost": {
+                    "mean": 23.42524928663364,
+                    "q05": 16.306411624599853,
+                    "median": 23.61714588080559,
+                    "q95": 29.351081569987517
+                  }
+                },
+                "entropy_nats": 4.88898748964714,
+                "effective_sample_size": 68.38094544741996
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.05285646314808121,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010100788445603064,
+                    "log_loss": 0.010152147546846133,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899945907815948,
+                    "log_loss": 0.010055799725403314,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999079554186,
+                    "log_loss": 0.01005042882783042,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010179686836617238,
+                    "log_loss": 0.010231854182125369,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9693471375856417,
+                    "log_loss": 0.031132488122679623,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010005409218405195,
+                    "log_loss": 0.010055799725403314,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9812335342588692,
+                    "log_loss": 0.018944790399437864,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9868065579811853,
+                    "log_loss": 0.013281248644533492,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.12419017970347836,
+                    "log_loss": 0.1326063117335136,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899321547295484,
+                    "log_loss": 0.010118868778042375,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.6025328344697454,
+                    "log_loss": 0.5066131180570165,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999609883071,
+                    "log_loss": 0.010050375259252606,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899426861546121,
+                    "log_loss": 0.010108230302471785,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.036698830333136104,
+                    "log_loss": 0.03738917499022554,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010597504749980797,
+                    "log_loss": 0.010654058208669588,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9858424581817185,
+                    "log_loss": 0.014258715865847899,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.8330077554719513,
+                    "q05": 1.243223519128554,
+                    "median": 1.7907782445404947,
+                    "q95": 2.666505483758462
+                  },
+                  "assignment": {
+                    "mean": 5.983479554869086,
+                    "q05": 2.479916757601368,
+                    "median": 6.339145503999195,
+                    "q95": 9.287374263454584
+                  },
+                  "disruption": {
+                    "mean": 5.623434050817167,
+                    "q05": 2.554735001549502,
+                    "median": 5.2718937965166734,
+                    "q95": 9.807777098767298
+                  },
+                  "rz4_cost": {
+                    "mean": 22.9644897040751,
+                    "q05": 16.610406810370375,
+                    "median": 22.289605779811158,
+                    "q95": 29.51308513914378
+                  }
+                },
+                "entropy_nats": 4.506095735803559,
+                "effective_sample_size": 47.28270391366652
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.04260245976306081,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010259708037606207,
+                    "log_loss": 0.010312701619506603,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899860417119272,
+                    "log_loss": 0.010064435233778885,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999754747801,
+                    "log_loss": 0.010050360626451106,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010536500790251485,
+                    "log_loss": 0.010592402735363748,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9702145925218776,
+                    "log_loss": 0.030238002548327064,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010013958288072876,
+                    "log_loss": 0.010064435233778885,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9888577305012016,
+                    "log_loss": 0.011204809576458813,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9880701624774488,
+                    "log_loss": 0.012001569102402064,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.18480498612805868,
+                    "log_loss": 0.20432791353989713,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989895392032995,
+                    "log_loss": 0.010156006049536283,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.8009237602500079,
+                    "log_loss": 0.22198951715534984,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999924550791,
+                    "log_loss": 0.010050343474633712,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9898408943389957,
+                    "log_loss": 0.010211061558078768,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.09529782047462525,
+                    "log_loss": 0.10014947283941046,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010000287762006541,
+                    "log_loss": 0.010050626522237186,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989875898864121,
+                    "log_loss": 0.010175698393762428,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "random": {
+          "training_trials": 12,
+          "checkpoints": {
+            "4": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.486380866616006,
+                    "q05": 0.2528508523635298,
+                    "median": 1.4997982927038596,
+                    "q95": 2.7858738757528396
+                  },
+                  "assignment": {
+                    "mean": 11.539853729924118,
+                    "q05": 1.8084818515712908,
+                    "median": 12.453318261472411,
+                    "q95": 19.29076192078753
+                  },
+                  "disruption": {
+                    "mean": 1.8750532524224108,
+                    "q05": -4.5747076415500665,
+                    "median": 0.985654028439753,
+                    "q95": 11.516226407789198
+                  },
+                  "rz4_cost": {
+                    "mean": 19.704513089427188,
+                    "q05": 6.678564168416581,
+                    "median": 20.71998846390517,
+                    "q95": 28.95470175239092
+                  }
+                },
+                "entropy_nats": 7.496665052932698,
+                "effective_sample_size": 1589.397314128152
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.3113631227061595,
+                "accuracy": 0.8125,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.03292583239708717,
+                    "log_loss": 0.03348008781138619,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9831010196415487,
+                    "log_loss": 0.01704339744007937,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899883929195474,
+                    "log_loss": 0.010062060245921323,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.11504902262831734,
+                    "log_loss": 0.12222302830880401,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.569631922166445,
+                    "log_loss": 0.5627648773254361,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01689898035845126,
+                    "log_loss": 0.01704339744007937,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.7358408148547164,
+                    "log_loss": 0.30674146781084133,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.781605290774952,
+                    "log_loss": 0.24640540911711956,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.6218218582106965,
+                    "log_loss": 0.9723899198026571,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9879747565824587,
+                    "log_loss": 0.012098131578430852,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.20102172126677012,
+                    "log_loss": 1.6043423107579398,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899695840642001,
+                    "log_loss": 0.010081059492942262,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9398579565542178,
+                    "log_loss": 0.06202652518506566,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.6065267867749696,
+                    "log_loss": 0.9327422865674765,
+                    "correct_at_0_5": false
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010809852579022453,
+                    "log_loss": 0.01086870353310615,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.940355483867106,
+                    "log_loss": 0.06149730088126647,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "8": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.8811713512209796,
+                    "q05": 0.9667362010041163,
+                    "median": 1.8557066461191183,
+                    "q95": 2.7700906807781234
+                  },
+                  "assignment": {
+                    "mean": 5.8710494946304355,
+                    "q05": 0.800704594252637,
+                    "median": 5.334160802501586,
+                    "q95": 11.785780614306233
+                  },
+                  "disruption": {
+                    "mean": 9.786433891634504,
+                    "q05": 5.509614807950587,
+                    "median": 9.810161659889578,
+                    "q95": 14.336983879998083
+                  },
+                  "rz4_cost": {
+                    "mean": 24.42894386399589,
+                    "q05": 14.512698308777459,
+                    "median": 26.052780442456378,
+                    "q95": 29.408057960965458
+                  }
+                },
+                "entropy_nats": 5.713095272293303,
+                "effective_sample_size": 181.15793427497488
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.028114379600650042,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010665610847447807,
+                    "log_loss": 0.010722896160830619,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899707293947643,
+                    "log_loss": 0.010079902558507034,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999717174617,
+                    "log_loss": 0.010050364421722375,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.011406710393211363,
+                    "log_loss": 0.011472265906148265,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9877132139943072,
+                    "log_loss": 0.01236289260706933,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010029270605235665,
+                    "log_loss": 0.010079902558506921,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9089856214950476,
+                    "log_loss": 0.09542600286700449,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9896532035972064,
+                    "log_loss": 0.010400696619428445,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02891052561261132,
+                    "log_loss": 0.029336668296105827,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9895584061988262,
+                    "log_loss": 0.01049648970995353,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.957876474756953,
+                    "log_loss": 0.04303645007959658,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999544378223,
+                    "log_loss": 0.010050381875904223,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989595563551683,
+                    "log_loss": 0.010458940986176512,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.10447783231468505,
+                    "log_loss": 0.11034830325362735,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.02166358933235472,
+                    "log_loss": 0.021901689906477038,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9573308554503682,
+                    "log_loss": 0.043606225803342134,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            },
+            "12": {
+              "posterior": {
+                "parameters": {
+                  "credit": {
+                    "mean": 1.7328633578595947,
+                    "q05": 0.9610580765137138,
+                    "median": 1.7119393761516863,
+                    "q95": 2.528432880246976
+                  },
+                  "assignment": {
+                    "mean": 8.078456119589276,
+                    "q05": 2.695778701461513,
+                    "median": 8.569230902477717,
+                    "q95": 12.811963993894969
+                  },
+                  "disruption": {
+                    "mean": 10.133369376859173,
+                    "q05": 5.275879395453336,
+                    "median": 10.429473944870356,
+                    "q95": 14.15865580532164
+                  },
+                  "rz4_cost": {
+                    "mean": 25.764027099496683,
+                    "q05": 18.14394550596456,
+                    "median": 26.54467201776249,
+                    "q95": 29.511819351439808
+                  }
+                },
+                "entropy_nats": 5.067125745576486,
+                "effective_sample_size": 94.00618766423219
+              },
+              "heldout": {
+                "trials": 16,
+                "mean_log_loss": 0.03245005058130393,
+                "accuracy": 1.0,
+                "predictions": [
+                  {
+                    "scenario_id": "heldout-0001",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01071753913458144,
+                    "log_loss": 0.010775385643213304,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0002",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899691615038991,
+                    "log_loss": 0.010081486334734128,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0003",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989999975850333,
+                    "log_loss": 0.010050360247104822,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0004",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.011515040572467978,
+                    "log_loss": 0.011581852038531163,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0005",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9873652142720116,
+                    "log_loss": 0.012715283399167911,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0006",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.010030838496100888,
+                    "log_loss": 0.010081486334734128,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0007",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9263607184149104,
+                    "log_loss": 0.07649157546428051,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0008",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9894953335532889,
+                    "log_loss": 0.010560229914973473,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0009",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.028109961768551663,
+                    "log_loss": 0.02851261031282427,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0010",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9896054202089584,
+                    "log_loss": 0.010448980747316153,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0011",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.931124573144175,
+                    "log_loss": 0.0713622049160072,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0012",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9899999927316165,
+                    "log_loss": 0.010050343195302942,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0013",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.989564307185162,
+                    "log_loss": 0.010490526475540721,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0014",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.19331511311816593,
+                    "log_loss": 0.21482216171100219,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0015",
+                    "observed_action": "PLACE_CRATE_PAD_BETA",
+                    "posterior_predictive_p_alpha": 0.01024003038324287,
+                    "log_loss": 0.010292820183018846,
+                    "correct_at_0_5": true
+                  },
+                  {
+                    "scenario_id": "heldout-0016",
+                    "observed_action": "PLACE_CRATE_PAD_ALPHA",
+                    "posterior_predictive_p_alpha": 0.9891755086526782,
+                    "log_loss": 0.010883502383111102,
+                    "correct_at_0_5": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "paired_full_budget_random_minus_active_log_loss": -0.010152409181756882
+      }
+    }
+  }
+}

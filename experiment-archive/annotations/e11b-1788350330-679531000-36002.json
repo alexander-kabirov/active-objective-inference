@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "annotation_id": "erratum-e11b-1788350330-679531000-36002-001",
+  "run_id": "e11b-1788350330-679531000-36002",
+  "created_at_utc": "2026-09-02T12:04:20Z",
+  "kind": "coding_note",
+  "immutable_evidence_changed": false,
+  "findings": [
+    {
+      "field": "trial 3 record.decision.intervention_commitment",
+      "recorded_value": "CATCH(load_cate)",
+      "corrected_interpretation": "semantically clear catch commitment; invalid exact action-schema spelling",
+      "reason": "The commitment rationale explicitly commits to catching and the later intervention executes CATCH(load_crate). The exact-string automated counter correctly marks the malformed token as false, so exact-schema and semantic counts must be reported separately."
+    }
+  ],
+  "resolution": {
+    "code_change_required": true,
+    "rerun_required_for_inclusion_in_confirmatory_analysis": false,
+    "use_in_primary_statistics": true,
+    "valid_scope": "Valid for intervention and outcome analysis. Report initial commitment as 2/3 exact-schema and 3/3 semantically clear."
+  }
+}

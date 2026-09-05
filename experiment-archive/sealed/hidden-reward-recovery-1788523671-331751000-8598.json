@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "hidden-reward-recovery-1788523671-331751000-8598",
+  "nonce_hex": "21a2e50d6c196c662e13869909d8a136fd05db825c4f42633decb563c7fa2872",
+  "cohort_to_profile": {
+    "amber": "assignment_weighted",
+    "cobalt": "safety_weighted",
+    "jade": "credit_weighted",
+    "violet": "disruption_weighted"
+  }
+}

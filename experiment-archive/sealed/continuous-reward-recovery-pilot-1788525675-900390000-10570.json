@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "continuous-reward-recovery-pilot-1788525675-900390000-10570",
+  "nonce_hex": "4b996b518c6b1c4439b7b3db14bfa0e1ff5ae3dca76b9531c3d0391571d7d8c1",
+  "actor_weights": {
+    "actor-01": {
+      "credit": 2.6806784147256297,
+      "assignment": 15.019182273678782,
+      "disruption": 1.4699153026062906,
+      "rz4_cost": 2.874551940492287,
+      "time_cost": 1.0
+    },
+    "actor-02": {
+      "credit": 2.2152686234443673,
+      "assignment": 8.784275462873063,
+      "disruption": 9.330587229251828,
+      "rz4_cost": 24.68330280325776,
+      "time_cost": 1.0
+    }
+  }
+}

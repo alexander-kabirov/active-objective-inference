@@ -1,0 +1,19 @@
+[package]
+name = "physical-causality-forensics-explorer"
+version = "0.1.0"
+description = "Interactive explorer for physical causality forensics experiments"
+authors = ["Alex"]
+edition = "2024"
+
+[lib]
+name = "physical_causality_forensics_explorer_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tokio = { version = "1", features = ["process"] }

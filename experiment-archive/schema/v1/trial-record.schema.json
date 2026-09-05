@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://comprehensible.ai/schemas/physical-causality/trial-record-v1.json",
+  "title": "Physical Causality Experiment Trial Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "trial_id", "trial_number", "recorded_at_utc", "random_seed", "stages", "record", "provenance"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "trial_id": { "type": "string", "minLength": 1 },
+    "trial_number": { "type": "integer", "minimum": 1 },
+    "recorded_at_utc": { "type": "string", "format": "date-time" },
+    "random_seed": { "type": ["integer", "null"], "minimum": 0 },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "request_messages", "requested_reasoning_effort", "max_completion_tokens", "response"],
+        "properties": {
+          "stage": { "type": "string", "minLength": 1 },
+          "request_messages": { "type": "array" },
+          "requested_reasoning_effort": { "type": "string" },
+          "max_completion_tokens": { "type": "integer", "minimum": 1 },
+          "response": { "type": "object" }
+        }
+      }
+    },
+    "record": { "type": "object" },
+    "provenance": { "type": "object" }
+  }
+}

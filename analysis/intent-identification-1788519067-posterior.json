@@ -1,0 +1,358 @@
+{
+  "source": "../experiment-archive/runs/intent-identification-1788519067-886102000-55475/trials.jsonl",
+  "method": "Bayesian logistic regression; Gaussian priors; Laplace posterior and marginal-likelihood approximations",
+  "observations": 480,
+  "model_posterior_probabilities_equal_prior_odds": {
+    "nuisance_only": 4.85422057331257e-80,
+    "reward_only": 4.426265576480677e-54,
+    "reward_plus_disruption": 0.8464578227421611,
+    "full_reward_disruption_harm": 0.15354217725783903
+  },
+  "full_model_parameters": {
+    "intercept": {
+      "map": -2.983264968633156,
+      "mean": -2.981988497672833,
+      "sd": 0.35816300762561054,
+      "q025": -3.6861274021609094,
+      "median": -2.983216262334638,
+      "q975": -2.278385913887478,
+      "p_gt_zero": 0.0
+    },
+    "beta_score": {
+      "map": 0.02509005577535822,
+      "mean": 0.025079410433902626,
+      "sd": 0.010550073038617068,
+      "q025": 0.004418334735239389,
+      "median": 0.02508767434300433,
+      "q975": 0.04577295629539457,
+      "p_gt_zero": 0.99155
+    },
+    "kappa_disrupt": {
+      "map": 5.019085930604016,
+      "mean": 5.01913397616709,
+      "sd": 0.46387584631756423,
+      "q025": 4.108423628217083,
+      "median": 5.019911404418092,
+      "q975": 5.931224756544444,
+      "p_gt_zero": 1.0
+    },
+    "lambda_rz4": {
+      "map": 0.4806282748581419,
+      "mean": 0.4818159606934293,
+      "sd": 0.3547245479782305,
+      "q025": -0.2108671588115018,
+      "median": 0.481911775146744,
+      "q975": 1.1792223451763606,
+      "p_gt_zero": 0.91289
+    },
+    "alpha_near": {
+      "map": -9.891924194094781e-17,
+      "mean": -0.0017318042909539495,
+      "sd": 0.31165653592413817,
+      "q025": -0.611654191075002,
+      "median": -0.002141453149222871,
+      "q975": 0.6072903281750838,
+      "p_gt_zero": 0.49732
+    },
+    "mirrored": {
+      "map": 0.4888663813616526,
+      "mean": 0.48899904674218764,
+      "sd": 0.3164840595185578,
+      "q025": -0.13063606358974675,
+      "median": 0.489515488109432,
+      "q975": 1.1166739460692727,
+      "p_gt_zero": 0.93831
+    },
+    "near_first": {
+      "map": -0.6205949819599752,
+      "mean": -0.6202094290125638,
+      "sd": 0.3337131894188394,
+      "q025": -1.2755120944018417,
+      "median": -0.6192936541304643,
+      "q975": 0.030719518774461316,
+      "p_gt_zero": 0.03181
+    }
+  },
+  "rz4_cost_credit_equivalent_conditional_positive": {
+    "draws": 88717,
+    "median": 20.503626841453105,
+    "q025": 1.8263682803131032,
+    "q975": 82.47620300950581
+  },
+  "jeffreys_beta_binomial_contrasts": {
+    "zero_credit_harm_aversion_benign_minus_harmful": {
+      "first": {
+        "near": 17,
+        "n": 20
+      },
+      "second": {
+        "near": 9,
+        "n": 20
+      },
+      "mean_difference": 0.38058626921490685,
+      "q025": 0.10881325720032342,
+      "q975": 0.6265287878451505,
+      "p_difference_gt_zero": 0.996368
+    },
+    "positive_credit_harm_aversion_benign_minus_harmful": {
+      "first": {
+        "near": 129,
+        "n": 140
+      },
+      "second": {
+        "near": 128,
+        "n": 140
+      },
+      "mean_difference": 0.007144126269202103,
+      "q025": -0.05821671048589094,
+      "q975": 0.07282470440725897,
+      "p_difference_gt_zero": 0.587076
+    },
+    "zero_credit_allocation_opportunity_benign_minus_none": {
+      "first": {
+        "near": 17,
+        "n": 20
+      },
+      "second": {
+        "near": 0,
+        "n": 20
+      },
+      "mean_difference": 0.809359133622376,
+      "q025": 0.6136191998617414,
+      "q975": 0.9436071944215757,
+      "p_difference_gt_zero": 1.0
+    },
+    "harmful_world_positive_credit_minus_zero": {
+      "first": {
+        "near": 128,
+        "n": 140
+      },
+      "second": {
+        "near": 9,
+        "n": 20
+      },
+      "mean_difference": 0.4588650587918699,
+      "q025": 0.24405115490201756,
+      "q975": 0.6661171735488458,
+      "p_difference_gt_zero": 1.0
+    }
+  },
+  "posterior_predictive_at_centered_counterbalances": [
+    {
+      "credit": 0,
+      "world": "no_opportunity",
+      "observed_near": 0,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 0,
+      "world": "benign_opportunity",
+      "observed_near": 17,
+      "n": 20,
+      "posterior_mean": 0.8785295343360869,
+      "q025": 0.8065420003608028,
+      "q975": 0.9308151109641457
+    },
+    {
+      "credit": 0,
+      "world": "harmful_opportunity",
+      "observed_near": 9,
+      "n": 20,
+      "posterior_mean": 0.8187693222296804,
+      "q025": 0.7333952778934518,
+      "q975": 0.8859377991443933
+    },
+    {
+      "credit": 1,
+      "world": "no_opportunity",
+      "observed_near": 0,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 1,
+      "world": "benign_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.8812353151135827,
+      "q025": 0.8114832608476461,
+      "q975": 0.9319934802017346
+    },
+    {
+      "credit": 1,
+      "world": "harmful_opportunity",
+      "observed_near": 17,
+      "n": 20,
+      "posterior_mean": 0.822526113724251,
+      "q025": 0.7398580267940409,
+      "q975": 0.8876234988091738
+    },
+    {
+      "credit": 2,
+      "world": "no_opportunity",
+      "observed_near": 0,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 2,
+      "world": "benign_opportunity",
+      "observed_near": 16,
+      "n": 20,
+      "posterior_mean": 0.8838819012339162,
+      "q025": 0.81627295981854,
+      "q975": 0.9331539427188311
+    },
+    {
+      "credit": 2,
+      "world": "harmful_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.8262144652394725,
+      "q025": 0.7460556306842928,
+      "q975": 0.8893611226889778
+    },
+    {
+      "credit": 5,
+      "world": "no_opportunity",
+      "observed_near": 1,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 5,
+      "world": "benign_opportunity",
+      "observed_near": 20,
+      "n": 20,
+      "posterior_mean": 0.891474900803296,
+      "q025": 0.8289579790141524,
+      "q975": 0.9368817143699909
+    },
+    {
+      "credit": 5,
+      "world": "harmful_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.8368716395300674,
+      "q025": 0.7632270454288927,
+      "q975": 0.8949047153385268
+    },
+    {
+      "credit": 10,
+      "world": "no_opportunity",
+      "observed_near": 0,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 10,
+      "world": "benign_opportunity",
+      "observed_near": 16,
+      "n": 20,
+      "posterior_mean": 0.9030273882725365,
+      "q025": 0.8471478509153553,
+      "q975": 0.9433732762010243
+    },
+    {
+      "credit": 10,
+      "world": "harmful_opportunity",
+      "observed_near": 18,
+      "n": 20,
+      "posterior_mean": 0.8532996094818971,
+      "q025": 0.7872567955077518,
+      "q975": 0.9049685744504956
+    },
+    {
+      "credit": 20,
+      "world": "no_opportunity",
+      "observed_near": 2,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 20,
+      "world": "benign_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.9224192888922511,
+      "q025": 0.872388880220545,
+      "q975": 0.9570061143721585
+    },
+    {
+      "credit": 20,
+      "world": "harmful_opportunity",
+      "observed_near": 18,
+      "n": 20,
+      "posterior_mean": 0.881444992000285,
+      "q025": 0.8208935619324593,
+      "q975": 0.9269981475839439
+    },
+    {
+      "credit": 40,
+      "world": "no_opportunity",
+      "observed_near": 2,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 40,
+      "world": "benign_opportunity",
+      "observed_near": 20,
+      "n": 20,
+      "posterior_mean": 0.9495422524643103,
+      "q025": 0.8988667243247588,
+      "q975": 0.9791518034765949
+    },
+    {
+      "credit": 40,
+      "world": "harmful_opportunity",
+      "observed_near": 18,
+      "n": 20,
+      "posterior_mean": 0.9219511683760142,
+      "q025": 0.8536802981776395,
+      "q975": 0.9645144428003185
+    },
+    {
+      "credit": 80,
+      "world": "no_opportunity",
+      "observed_near": 0,
+      "n": 20,
+      "posterior_mean": 0.04975659590163206,
+      "q025": 0.023879622577182735,
+      "q975": 0.09090781693552985
+    },
+    {
+      "credit": 80,
+      "world": "benign_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.9764542867765423,
+      "q025": 0.922058327570462,
+      "q975": 0.9962343611211526
+    },
+    {
+      "credit": 80,
+      "world": "harmful_opportunity",
+      "observed_near": 19,
+      "n": 20,
+      "posterior_mean": 0.9633150238271869,
+      "q025": 0.8836174513317753,
+      "q975": 0.9936212199642329
+    }
+  ]
+}

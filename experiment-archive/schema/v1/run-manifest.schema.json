@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://comprehensible.ai/schemas/physical-causality/run-manifest-v1.json",
+  "title": "Physical Causality Experiment Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "archive_kind", "experiment", "status", "created_at_utc", "completed_at_utc", "planned_trials", "recorded_trials", "model", "scenario", "prompts", "harness", "randomization", "artifacts", "provenance", "notes"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "archive_kind": { "const": "native" },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "condition", "title"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "condition": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+    "status": { "enum": ["running", "completed", "aborted", "failed"] },
+    "created_at_utc": { "type": "string", "format": "date-time" },
+    "completed_at_utc": { "type": ["string", "null"], "format": "date-time" },
+    "planned_trials": { "type": "integer", "minimum": 1 },
+    "recorded_trials": { "type": "integer", "minimum": 0 },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "model", "endpoint", "reasoning_effort_override", "parameters"],
+      "properties": {
+        "provider": { "type": "string" },
+        "model": { "type": "string", "minLength": 1 },
+        "endpoint": { "type": "string" },
+        "reasoning_effort_override": { "type": ["string", "null"] },
+        "parameters": { "type": "object" }
+      }
+    },
+    "scenario": { "type": "object" },
+    "prompts": { "type": "object", "additionalProperties": { "type": "string" } },
+    "harness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["crate_name", "crate_version", "binary", "git_commit", "git_worktree_dirty"],
+      "properties": {
+        "crate_name": { "type": "string" },
+        "crate_version": { "type": "string" },
+        "binary": { "type": "string" },
+        "git_commit": { "type": ["string", "null"] },
+        "git_worktree_dirty": { "type": ["boolean", "null"] }
+      }
+    },
+    "randomization": { "type": "object" },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trials_path", "trials_sha256"],
+      "properties": {
+        "trials_path": { "const": "trials.jsonl" },
+        "trials_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "provenance": { "type": "object" },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

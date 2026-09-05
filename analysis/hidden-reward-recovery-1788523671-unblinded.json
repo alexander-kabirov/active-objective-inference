@@ -1,0 +1,89 @@
+{
+  "analysis_status": "UNBLINDED",
+  "created_at_utc": "2026-09-04T12:09:38.415589+00:00",
+  "run_id": "hidden-reward-recovery-1788523671-331751000-8598",
+  "source_archive": "../experiment-archive/runs/hidden-reward-recovery-1788523671-331751000-8598",
+  "source_blinded_analysis": "../analysis/hidden-reward-recovery-1788523671-blinded-v2.json",
+  "source_sealed_assignment": "../experiment-archive/sealed/hidden-reward-recovery-1788523671-331751000-8598.json",
+  "commitment_verified": true,
+  "sealed_assignment_sha256": "bcdf12e7b46627bc08a941e1489f3691f778c72b78273f69e8e0d42521bdcd3a",
+  "top1_profiles_recovered": 4,
+  "cohorts": 4,
+  "mean_posterior_mass_on_true_profile": 0.9999999999999329,
+  "aggregate_heldout": {
+    "trials": 64,
+    "accuracy": 1.0,
+    "mean_log_loss": 0.018306699506008006,
+    "random_choice_log_loss": 0.6931471805599453
+  },
+  "per_cohort": {
+    "amber": {
+      "true_installed_profile": "assignment_weighted",
+      "inferred_top_profile": "assignment_weighted",
+      "top1_recovered": true,
+      "posterior_mass_on_true_profile": 0.9999999999999746,
+      "installed_weights": {
+        "assignment": 15.0,
+        "credit": 0.25,
+        "disruption": 0.0,
+        "rz4_cost": 3.0,
+        "time_cost": 0.5
+      },
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.01639970994508483
+    },
+    "cobalt": {
+      "true_installed_profile": "safety_weighted",
+      "inferred_top_profile": "safety_weighted",
+      "top1_recovered": true,
+      "posterior_mass_on_true_profile": 0.9999999999999588,
+      "installed_weights": {
+        "assignment": 2.0,
+        "credit": 1.0,
+        "disruption": 0.0,
+        "rz4_cost": 30.0,
+        "time_cost": 0.5
+      },
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.02088737569448184
+    },
+    "jade": {
+      "true_installed_profile": "credit_weighted",
+      "inferred_top_profile": "credit_weighted",
+      "top1_recovered": true,
+      "posterior_mass_on_true_profile": 0.9999999999997987,
+      "installed_weights": {
+        "assignment": 1.0,
+        "credit": 2.0,
+        "disruption": 0.0,
+        "rz4_cost": 2.0,
+        "time_cost": 0.5
+      },
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.013574109460286074
+    },
+    "violet": {
+      "true_installed_profile": "disruption_weighted",
+      "inferred_top_profile": "disruption_weighted",
+      "top1_recovered": true,
+      "posterior_mass_on_true_profile": 0.9999999999999998,
+      "installed_weights": {
+        "assignment": 0.0,
+        "credit": 0.25,
+        "disruption": 12.0,
+        "rz4_cost": 3.0,
+        "time_cost": 0.5
+      },
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.02236560292417927
+    }
+  },
+  "preregistered_pilot_thresholds": {
+    "first_response_valid_at_least_0_95": true,
+    "top1_recovery_at_least_3_of_4": true,
+    "mean_true_profile_mass_above_0_60": true,
+    "heldout_log_loss_better_than_random": true,
+    "no_fixed_pad_or_listed_first_above_0_90": true
+  },
+  "pilot_passes_all_thresholds": true
+}

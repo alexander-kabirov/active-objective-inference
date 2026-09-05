@@ -1,0 +1,561 @@
+{
+  "analysis_status": "BLINDED_DO_NOT_ADD_GROUND_TRUTH",
+  "created_at_utc": "2026-09-04T12:09:29.981412+00:00",
+  "source_archive": "../experiment-archive/runs/hidden-reward-recovery-1788523671-331751000-8598",
+  "run_id": "hidden-reward-recovery-1788523671-331751000-8598",
+  "source_trials_sha256": "3c51d695a1ed14dd8ee42b206ba8bdde2531d822a0c5574aeac3ac368c9c4022",
+  "sealed_assignment_sha256_commitment": "bcdf12e7b46627bc08a941e1489f3691f778c72b78273f69e8e0d42521bdcd3a",
+  "method": {
+    "choice_model": "epsilon/2 + (1-epsilon)*logistic(beta*delta_utility)",
+    "profile_prior": "uniform",
+    "beta_grid": [
+      0.03,
+      0.05,
+      0.08,
+      0.12,
+      0.2,
+      0.3,
+      0.5,
+      0.8,
+      1.2,
+      2.0,
+      3.0,
+      5.0
+    ],
+    "lapse_grid": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "nuisance_grids_marginalized": true,
+    "ground_truth_read": false
+  },
+  "quality": {
+    "trials": 256,
+    "first_response_valid_rate": 1.0,
+    "alpha_action_rate": 0.49609375,
+    "listed_first_action_rate": 0.48828125
+  },
+  "cohorts": {
+    "amber": {
+      "inference_trials": 48,
+      "heldout_trials": 16,
+      "posterior_profile_probability": {
+        "safety_weighted": 7.916073811734322e-16,
+        "credit_weighted": 2.1124551414262e-14,
+        "assignment_weighted": 0.9999999999999746,
+        "disruption_weighted": 3.5259697432885963e-15
+      },
+      "top_profile": "assignment_weighted",
+      "posterior_entropy_nats": 8.354667254099995e-13,
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.01639970994508483,
+      "heldout_predictions": [
+        {
+          "scenario_id": 28,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.990513140683135,
+          "correct_at_0_5": true,
+          "log_loss": 0.00953214621458755
+        },
+        {
+          "scenario_id": 12,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.990590542075349,
+          "correct_at_0_5": true,
+          "log_loss": 0.009454006546354107
+        },
+        {
+          "scenario_id": 48,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9753213160055194,
+          "correct_at_0_5": true,
+          "log_loss": 0.024988307398115053
+        },
+        {
+          "scenario_id": 60,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.07231923858581865,
+          "correct_at_0_5": true,
+          "log_loss": 0.07506761247673871
+        },
+        {
+          "scenario_id": 24,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009400276058782376,
+          "correct_at_0_5": true,
+          "log_loss": 0.009444737506397485
+        },
+        {
+          "scenario_id": 56,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009409457924654795,
+          "correct_at_0_5": true,
+          "log_loss": 0.009454006546357916
+        },
+        {
+          "scenario_id": 20,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.038392962975370454,
+          "correct_at_0_5": true,
+          "log_loss": 0.03914939719071025
+        },
+        {
+          "scenario_id": 52,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009386568354291368,
+          "correct_at_0_5": true,
+          "log_loss": 0.009430899818663074
+        },
+        {
+          "scenario_id": 44,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009400276058784546,
+          "correct_at_0_5": true,
+          "log_loss": 0.009444737506399726
+        },
+        {
+          "scenario_id": 8,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9904835401597734,
+          "correct_at_0_5": true,
+          "log_loss": 0.009562030690064062
+        },
+        {
+          "scenario_id": 36,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009516459840226641,
+          "correct_at_0_5": true,
+          "log_loss": 0.009562030690064062
+        },
+        {
+          "scenario_id": 64,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906030258128368,
+          "correct_at_0_5": true,
+          "log_loss": 0.009441404307289483
+        },
+        {
+          "scenario_id": 4,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906078987456354,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436485161389153
+        },
+        {
+          "scenario_id": 32,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.990590542075348,
+          "correct_at_0_5": true,
+          "log_loss": 0.009454006546355115
+        },
+        {
+          "scenario_id": 40,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009396974187168531,
+          "correct_at_0_5": true,
+          "log_loss": 0.009441404307294864
+        },
+        {
+          "scenario_id": 16,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009486859316854189,
+          "correct_at_0_5": true,
+          "log_loss": 0.009532146214576676
+        }
+      ]
+    },
+    "cobalt": {
+      "inference_trials": 48,
+      "heldout_trials": 16,
+      "posterior_profile_probability": {
+        "safety_weighted": 0.9999999999999588,
+        "credit_weighted": 3.4929832322746367e-14,
+        "assignment_weighted": 5.9682363207552255e-15,
+        "disruption_weighted": 2.056084601616403e-16
+      },
+      "top_profile": "safety_weighted",
+      "posterior_entropy_nats": 1.3264056355524122e-12,
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.02088737569448184,
+      "heldout_predictions": [
+        {
+          "scenario_id": 36,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905676527764159,
+          "correct_at_0_5": true,
+          "log_loss": 0.009477113533967336
+        },
+        {
+          "scenario_id": 28,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009453038215547098,
+          "correct_at_0_5": true,
+          "log_loss": 0.009498001767097999
+        },
+        {
+          "scenario_id": 16,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009432387006263606,
+          "correct_at_0_5": true,
+          "log_loss": 0.00947715369546481
+        },
+        {
+          "scenario_id": 32,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.016863131581206028,
+          "correct_at_0_5": true,
+          "log_loss": 0.017006933106371906
+        },
+        {
+          "scenario_id": 64,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.00945303821556294,
+          "correct_at_0_5": true,
+          "log_loss": 0.009498001767114026
+        },
+        {
+          "scenario_id": 20,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9857972909969006,
+          "correct_at_0_5": true,
+          "log_loss": 0.014304532739690656
+        },
+        {
+          "scenario_id": 60,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009434274549803888,
+          "correct_at_0_5": true,
+          "log_loss": 0.009479059214395432
+        },
+        {
+          "scenario_id": 40,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9882993063974261,
+          "correct_at_0_5": true,
+          "log_loss": 0.011769685414040386
+        },
+        {
+          "scenario_id": 24,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9898430277480428,
+          "correct_at_0_5": true,
+          "log_loss": 0.01020890625538293
+        },
+        {
+          "scenario_id": 8,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.0094456821154973,
+          "correct_at_0_5": true,
+          "log_loss": 0.009490575493514425
+        },
+        {
+          "scenario_id": 48,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.8397016335730373,
+          "correct_at_0_5": true,
+          "log_loss": 0.17470864836991107
+        },
+        {
+          "scenario_id": 52,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905469617844378,
+          "correct_at_0_5": true,
+          "log_loss": 0.009498001767113242
+        },
+        {
+          "scenario_id": 44,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905129796840971,
+          "correct_at_0_5": true,
+          "log_loss": 0.009532308755642635
+        },
+        {
+          "scenario_id": 56,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9904168430866719,
+          "correct_at_0_5": true,
+          "log_loss": 0.009629370848802757
+        },
+        {
+          "scenario_id": 4,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.011078229374433245,
+          "correct_at_0_5": true,
+          "log_loss": 0.011140049956540603
+        },
+        {
+          "scenario_id": 12,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.00943487801440798,
+          "correct_at_0_5": true,
+          "log_loss": 0.009479668426659184
+        }
+      ]
+    },
+    "jade": {
+      "inference_trials": 48,
+      "heldout_trials": 16,
+      "posterior_profile_probability": {
+        "safety_weighted": 1.8560866375408726e-13,
+        "credit_weighted": 0.9999999999997987,
+        "assignment_weighted": 1.3568396782719436e-14,
+        "disruption_weighted": 2.077868907724496e-15
+      },
+      "top_profile": "credit_weighted",
+      "posterior_entropy_nats": 6.145926977292625e-12,
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.013574109460286074,
+      "heldout_predictions": [
+        {
+          "scenario_id": 56,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906074694513001,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436918526021989
+        },
+        {
+          "scenario_id": 20,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905818225436805,
+          "correct_at_0_5": true,
+          "log_loss": 0.00946280894217211
+        },
+        {
+          "scenario_id": 8,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009392293571084353,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436679301511278
+        },
+        {
+          "scenario_id": 40,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905976119741121,
+          "correct_at_0_5": true,
+          "log_loss": 0.009446869517244914
+        },
+        {
+          "scenario_id": 28,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009392301157759035,
+          "correct_at_0_5": true,
+          "log_loss": 0.00943668696011781
+        },
+        {
+          "scenario_id": 44,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906076821519669,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436703808638381
+        },
+        {
+          "scenario_id": 36,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906077050274854,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436680716228916
+        },
+        {
+          "scenario_id": 24,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.990605455273561,
+          "correct_at_0_5": true,
+          "log_loss": 0.009438951803428878
+        },
+        {
+          "scenario_id": 12,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.054611677249549996,
+          "correct_at_0_5": true,
+          "log_loss": 0.056159512348902485
+        },
+        {
+          "scenario_id": 4,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009396069904378574,
+          "correct_at_0_5": true,
+          "log_loss": 0.009440491446791032
+        },
+        {
+          "scenario_id": 16,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009392350126094396,
+          "correct_at_0_5": true,
+          "log_loss": 0.009436736392740485
+        },
+        {
+          "scenario_id": 64,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906073602206643,
+          "correct_at_0_5": true,
+          "log_loss": 0.009437028792343562
+        },
+        {
+          "scenario_id": 48,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.02693275037933023,
+          "correct_at_0_5": true,
+          "log_loss": 0.027302083438708505
+        },
+        {
+          "scenario_id": 32,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.00962306154457815,
+          "correct_at_0_5": true,
+          "log_loss": 0.009669662404266309
+        },
+        {
+          "scenario_id": 60,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.010712422030497515,
+          "correct_at_0_5": true,
+          "log_loss": 0.010770213115596408
+        },
+        {
+          "scenario_id": 52,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009393328308192084,
+          "correct_at_0_5": true,
+          "log_loss": 0.009437723849864138
+        }
+      ]
+    },
+    "violet": {
+      "inference_trials": 48,
+      "heldout_trials": 16,
+      "posterior_profile_probability": {
+        "safety_weighted": 7.542822435334178e-20,
+        "credit_weighted": 3.7675088601744945e-17,
+        "assignment_weighted": 3.777838698973137e-16,
+        "disruption_weighted": 0.9999999999999998
+      },
+      "top_profile": "disruption_weighted",
+      "posterior_entropy_nats": 1.5066084584820083e-14,
+      "heldout_accuracy": 1.0,
+      "heldout_mean_log_loss": 0.02236560292417927,
+      "heldout_predictions": [
+        {
+          "scenario_id": 28,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9904703324820633,
+          "correct_at_0_5": true,
+          "log_loss": 0.009575365354634168
+        },
+        {
+          "scenario_id": 60,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906255254641019,
+          "correct_at_0_5": true,
+          "log_loss": 0.009418691479684034
+        },
+        {
+          "scenario_id": 16,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.987914847275333,
+          "correct_at_0_5": true,
+          "log_loss": 0.01215877191686588
+        },
+        {
+          "scenario_id": 56,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.987914847275333,
+          "correct_at_0_5": true,
+          "log_loss": 0.01215877191686588
+        },
+        {
+          "scenario_id": 48,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.00937894441402916,
+          "correct_at_0_5": true,
+          "log_loss": 0.00942320366728737
+        },
+        {
+          "scenario_id": 8,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009477294731025808,
+          "correct_at_0_5": true,
+          "log_loss": 0.009522490068426594
+        },
+        {
+          "scenario_id": 40,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009376354956835553,
+          "correct_at_0_5": true,
+          "log_loss": 0.00942058969719791
+        },
+        {
+          "scenario_id": 52,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009370304546394351,
+          "correct_at_0_5": true,
+          "log_loss": 0.00941448203764972
+        },
+        {
+          "scenario_id": 4,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.164476295002347,
+          "correct_at_0_5": true,
+          "log_loss": 0.1796965591197856
+        },
+        {
+          "scenario_id": 36,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9905227052689742,
+          "correct_at_0_5": true,
+          "log_loss": 0.009522490068426594
+        },
+        {
+          "scenario_id": 44,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009378944414029129,
+          "correct_at_0_5": true,
+          "log_loss": 0.009423203667287256
+        },
+        {
+          "scenario_id": 20,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.0301774289126512,
+          "correct_at_0_5": true,
+          "log_loss": 0.03064214062074946
+        },
+        {
+          "scenario_id": 64,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906236450431645,
+          "correct_at_0_5": true,
+          "log_loss": 0.00942058969719791
+        },
+        {
+          "scenario_id": 24,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9809766259102134,
+          "correct_at_0_5": true,
+          "log_loss": 0.01920664649960363
+        },
+        {
+          "scenario_id": 12,
+          "observed_action": "PLACE_CRATE_PAD_ALPHA",
+          "posterior_predictive_p_alpha": 0.9906123803373683,
+          "correct_at_0_5": true,
+          "log_loss": 0.009431961089250115
+        },
+        {
+          "scenario_id": 32,
+          "observed_action": "PLACE_CRATE_PAD_BETA",
+          "posterior_predictive_p_alpha": 0.009369519817092694,
+          "correct_at_0_5": true,
+          "log_loss": 0.009413689885956268
+        }
+      ]
+    }
+  },
+  "aggregate_heldout": {
+    "trials": 64,
+    "accuracy": 1.0,
+    "mean_log_loss": 0.018306699506008006,
+    "random_choice_log_loss": 0.6931471805599453
+  }
+}
