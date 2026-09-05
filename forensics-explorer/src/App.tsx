@@ -183,8 +183,8 @@ export default function App() {
       <header className="topbar">
         <div className="brand-mark"><FlaskConical size={18} /></div>
         <div className="brand-copy">
-          <strong>Physical Causality Forensics</strong>
-          <span>Experiment explorer</span>
+          <strong>Active Objective Inference</strong>
+          <span>Experiment Explorer</span>
         </div>
         <div className="topbar-spacer" />
         <button className="quiet-button" onClick={() => void refresh()} disabled={loading}>
