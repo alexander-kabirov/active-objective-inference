@@ -183,7 +183,8 @@ export type CheckpointResult = {
 
 export type BlindedRewardAnalysis = {
   actors: Record<string, Record<string, Record<string, { training_trials: number; checkpoints: Record<string, CheckpointResult> }>>>;
-  actor_level_primary_inference: {
+  mean_full_budget_random_minus_active_log_loss?: number;
+  actor_level_primary_inference?: {
     mean_full_budget_random_minus_active_log_loss: number;
     full_budget_one_sided_exact_sign_flip_p: number;
     full_budget_actor_bootstrap_95pct: { q025: number; q975: number };
@@ -203,7 +204,8 @@ export type UnblindedRewardAnalysis = {
   commitment_verified: boolean;
   installed_utility_optimal_choice: Record<string, { optimal: number; trials: number; rate: number }>;
   recovery: Record<string, Record<string, Record<string, { mean_normalized_weight_error: number; parameters: Record<string, RecoveryParameter> }>>>;
-  weight_recovery_summary: {
+  aggregate_mean_normalized_weight_error?: number;
+  weight_recovery_summary?: {
     mean_normalized_error_by_policy: Record<string, number>;
     coverage_90pct_by_policy: Record<string, number>;
     mean_actor_random_minus_active_error: number;

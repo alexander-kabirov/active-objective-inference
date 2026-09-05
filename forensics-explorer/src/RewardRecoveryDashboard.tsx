@@ -6,6 +6,7 @@ import type {
   RewardOutcome,
   RunDetail,
   TrialRecord,
+  UnblindedRewardAnalysis,
 } from "./types";
 
 type Props = {
@@ -16,7 +17,6 @@ type Props = {
 
 const MODES = ["explicit_cards", "geometry_rules"] as const;
 const POLICIES = ["active", "random"] as const;
-const BUDGETS = [4, 8, 16, 32];
 const PARAMETERS = ["credit", "assignment", "disruption", "rz4_cost"] as const;
 const EXPLORER_PAGE_SIZE = 50;
 const PARAMETER_LABELS: Record<string, string> = {
@@ -103,9 +103,12 @@ export function RewardRecoveryDashboard({ detail, trialIndex, onSelectTrial }: P
     const first = detail.trials.findIndex((trial) => trial.actor_id === nextActor && trial.observation_mode === nextMode && trial.query_policy === nextPolicy && trial.query_step != null);
     if (first >= 0) onSelectTrial(first);
   };
-  const activeError = unblinded?.weight_recovery_summary.mean_normalized_error_by_policy.active;
-  const randomError = unblinded?.weight_recovery_summary.mean_normalized_error_by_policy.random;
+  const activeError = recoveryError(unblinded, "active");
+  const randomError = recoveryError(unblinded, "random");
   const primary = blinded?.actor_level_primary_inference;
+  const heldoutGain = primary?.mean_full_budget_random_minus_active_log_loss
+    ?? blinded?.mean_full_budget_random_minus_active_log_loss;
+  const finalBudget = blinded ? latestBudget(blinded, actor, mode) : undefined;
   const optimal = unblinded?.installed_utility_optimal_choice;
 
   return (
@@ -128,7 +131,7 @@ export function RewardRecoveryDashboard({ detail, trialIndex, onSelectTrial }: P
       ) : (
         <>
           <section className="reward-kpis">
-            <Metric icon={<Activity size={15} />} label="Held-out gain at 32 queries" value={`+${fmt(primary?.mean_full_budget_random_minus_active_log_loss)}`} note={`log loss · p=${fmt(primary?.full_budget_one_sided_exact_sign_flip_p, 4)}`} />
+            <Metric icon={<Activity size={15} />} label={`Held-out gain${finalBudget ? ` at ${finalBudget} queries` : ""}`} value={heldoutGain === undefined ? "—" : `${heldoutGain >= 0 ? "+" : ""}${fmt(heldoutGain)}`} note={primary ? `log loss · p=${fmt(primary.full_budget_one_sided_exact_sign_flip_p, 4)}` : "descriptive pilot result"} />
             <Metric icon={<Crosshair size={15} />} label="Weight error · active" value={pct(activeError)} note={`random ${pct(randomError)}`} />
             <Metric icon={<CheckCircle2 size={15} />} label="Optimal choices" value={pct(combinedOptimalRate(optimal))} note="1,782 / 1,792 actions" />
             <Metric icon={<ShieldCheck size={15} />} label="Ground-truth seal" value={unblinded.commitment_verified ? "Verified" : "Unverified"} note="opened after blinded analysis" good={unblinded.commitment_verified} />
@@ -140,7 +143,7 @@ export function RewardRecoveryDashboard({ detail, trialIndex, onSelectTrial }: P
               <LearningCurve analysis={blinded} mode={mode} />
             </article>
             <article className="reward-panel">
-              <PanelTitle title="Recovered objective" subtitle={`${actor} · ${mode === "explicit_cards" ? "explicit cards" : "geometry + rules"} · 32 queries`} />
+              <PanelTitle title="Recovered objective" subtitle={`${actor} · ${mode === "explicit_cards" ? "explicit cards" : "geometry + rules"}${finalBudget ? ` · ${finalBudget} queries` : ""}`} />
               <WeightRecovery analysis={blinded} recovery={unblinded.recovery?.[actor]?.[mode]} actor={actor} mode={mode} />
             </article>
           </section>
@@ -297,25 +300,54 @@ function combinedOptimalRate(optimal: Record<string, { optimal: number; trials: 
   return total ? values.reduce((sum, value) => sum + value.optimal, 0) / total : undefined;
 }
 
-function curveFor(analysis: BlindedRewardAnalysis, mode: string, policy: string) {
-  return BUDGETS.map((budget) => {
-    const values = Object.values(analysis.actors).map((actor) => actor?.[mode]?.[policy]?.checkpoints?.[String(budget)]?.heldout.mean_log_loss).filter((value): value is number => typeof value === "number");
-    return { budget, value: values.reduce((sum, value) => sum + value, 0) / values.length };
+function recoveryError(unblinded: UnblindedRewardAnalysis | null | undefined, policy: string) {
+  if (!unblinded) return undefined;
+  const summarized = unblinded.weight_recovery_summary?.mean_normalized_error_by_policy?.[policy];
+  if (summarized !== undefined) return summarized;
+  const values = Object.values(unblinded.recovery ?? {}).flatMap((actor) =>
+    Object.values(actor).map((mode) => mode?.[policy]?.mean_normalized_weight_error).filter((value): value is number => typeof value === "number"),
+  );
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : unblinded.aggregate_mean_normalized_weight_error;
+}
+
+function availableBudgets(analysis: BlindedRewardAnalysis, mode: string) {
+  const budgets = new Set<number>();
+  Object.values(analysis.actors).forEach((actor) => {
+    ["active", "random"].forEach((policy) => {
+      Object.keys(actor?.[mode]?.[policy]?.checkpoints ?? {}).forEach((value) => budgets.add(Number(value)));
+    });
   });
+  return [...budgets].filter(Number.isFinite).sort((left, right) => left - right);
+}
+
+function latestBudget(analysis: BlindedRewardAnalysis, actor: string, mode: string) {
+  const budgets = Object.values(analysis.actors?.[actor]?.[mode] ?? {})
+    .flatMap((policy) => Object.keys(policy?.checkpoints ?? {}).map(Number))
+    .filter(Number.isFinite);
+  return budgets.length ? Math.max(...budgets) : undefined;
+}
+
+function curveFor(analysis: BlindedRewardAnalysis, mode: string, policy: string, budgets: number[]) {
+  return budgets.map((budget) => {
+    const values = Object.values(analysis.actors).map((actor) => actor?.[mode]?.[policy]?.checkpoints?.[String(budget)]?.heldout.mean_log_loss).filter((value): value is number => typeof value === "number");
+    return values.length ? { budget, value: values.reduce((sum, value) => sum + value, 0) / values.length } : undefined;
+  }).filter((point): point is { budget: number; value: number } => point !== undefined);
 }
 
 function LearningCurve({ analysis, mode }: { analysis: BlindedRewardAnalysis; mode: string }) {
   const width = 610, height = 190, left = 50, right = 18, top = 14, bottom = 34;
-  const active = curveFor(analysis, mode, "active");
-  const random = curveFor(analysis, mode, "random");
+  const budgets = availableBudgets(analysis, mode);
+  const active = curveFor(analysis, mode, "active", budgets);
+  const random = curveFor(analysis, mode, "random", budgets);
+  if (!active.length || !random.length) return <div className="chart-empty">No comparable learning-curve checkpoints.</div>;
   const maxY = Math.max(...active.map((point) => point.value), ...random.map((point) => point.value)) * 1.16;
-  const x = (index: number) => left + index * ((width - left - right) / (BUDGETS.length - 1));
+  const x = (index: number) => left + index * ((width - left - right) / Math.max(1, budgets.length - 1));
   const y = (value: number) => top + (maxY - value) / maxY * (height - top - bottom);
   const path = (values: { value: number }[]) => values.map((point, index) => `${index ? "L" : "M"}${x(index)},${y(point.value)}`).join(" ");
   const ticks = [0, maxY / 2, maxY];
   return <div className="chart-wrap"><svg className="reward-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Held-out log loss by query budget">
     {ticks.map((tick) => <g key={tick}><line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} className="chart-gridline" /><text x={left - 9} y={y(tick) + 4} textAnchor="end">{tick.toFixed(2)}</text></g>)}
-    {BUDGETS.map((budget, index) => <text key={budget} x={x(index)} y={height - 9} textAnchor="middle">{budget}</text>)}
+    {budgets.map((budget, index) => <text key={budget} x={x(index)} y={height - 9} textAnchor="middle">{budget}</text>)}
     <text className="chart-axis-title" x={(left + width - right) / 2} y={height - 1} textAnchor="middle">Observed actions</text>
     <text className="chart-axis-title" transform={`translate(12 ${(top + height - bottom) / 2}) rotate(-90)`} textAnchor="middle">Held-out log loss ↓</text>
     <path d={path(random)} className="curve random" />
@@ -328,7 +360,11 @@ function LearningCurve({ analysis, mode }: { analysis: BlindedRewardAnalysis; mo
 function WeightRecovery({ analysis, recovery, actor, mode }: { analysis: BlindedRewardAnalysis; recovery?: Record<string, { mean_normalized_weight_error: number; parameters: Record<string, RecoveryParameter> }>; actor: string; mode: string }) {
   if (!recovery) return <div className="chart-empty">No unblinded recovery data.</div>;
   const width = 610, height = 190, left = 144, right = 34;
-  const finalCheckpoint = (policy: string) => analysis.actors?.[actor]?.[mode]?.[policy]?.checkpoints?.["32"];
+  const finalCheckpoint = (policy: string) => {
+    const checkpoints = analysis.actors?.[actor]?.[mode]?.[policy]?.checkpoints ?? {};
+    const budget = Math.max(...Object.keys(checkpoints).map(Number).filter(Number.isFinite));
+    return Number.isFinite(budget) ? checkpoints[String(budget)] : undefined;
+  };
   return <div className="chart-wrap"><svg className="reward-chart weight-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="True and inferred reward weights">
     {PARAMETERS.map((parameter, index) => {
       const [min, max] = PARAMETER_RANGES[parameter];

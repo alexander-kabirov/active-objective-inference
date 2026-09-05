@@ -86,15 +86,20 @@ export default function App() {
 
   useEffect(() => {
     if (!selectedRunId) return;
+    let cancelled = false;
     setLoading(true);
+    setError(undefined);
+    setDetail(undefined);
+    setTrialIndex(0);
+    setTime(0);
     loadRun(selectedRunId)
       .then((next) => {
+        if (cancelled) return;
         setDetail(next);
-        setTrialIndex(0);
-        setTime(0);
       })
-      .catch((reason) => setError(String(reason)))
-      .finally(() => setLoading(false));
+      .catch((reason) => { if (!cancelled) setError(String(reason)); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [selectedRunId]);
 
   useEffect(() => {
