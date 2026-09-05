@@ -220,9 +220,9 @@ button:disabled { opacity: .45; cursor: default; }
 .choice-badge.alpha { color: #8bb5ff; border-color: #365986; }.choice-badge.beta { color: #ffc25c; border-color: #765421; }
 .danger-text { color: #ff8090; }.muted-cell { color: var(--subtle); }
 .trial-table-empty { height: 90px; color: var(--muted) !important; text-align: center; }
-.trial-pagination { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 9px 12px; padding-top: 9px; color: var(--muted); font-size: 8.5px; }
-.trial-pagination > span { flex: 1 1 auto; }
-.trial-pagination > div { min-width: 0; max-width: 100%; margin-left: auto; display: flex; flex: 0 1 auto; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.trial-pagination { width: 100%; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) max-content; align-items: center; gap: 9px 12px; padding-top: 9px; color: var(--muted); font-size: 8.5px; overflow: hidden; }
+.trial-pagination-range { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trial-pagination > nav { min-width: 0; display: grid; grid-template-columns: max-content minmax(70px, max-content) max-content; align-items: center; justify-content: end; gap: 8px; white-space: nowrap; }
 .trial-pagination button { flex: 0 0 auto; height: 27px; display: inline-flex; align-items: center; gap: 4px; padding: 0 8px; color: #aeb8c2; border: 1px solid var(--border-strong); background: #12171c; cursor: pointer; font-size: 8px; }
 .trial-pagination button:disabled { opacity: .35; }.trial-pagination strong { min-width: 70px; color: #aab4be; text-align: center; font-size: 8px; }
 
@@ -243,4 +243,9 @@ button:disabled { opacity: .45; cursor: default; }
   .reward-chart-grid, .reward-bottom-grid { grid-template-columns: 1fr; }
   .trial-explorer-filters { grid-template-columns: repeat(2, 1fr); }
   .trial-search { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  .trial-pagination { grid-template-columns: minmax(0, 1fr); }
+  .trial-pagination > nav { justify-content: start; }
 }

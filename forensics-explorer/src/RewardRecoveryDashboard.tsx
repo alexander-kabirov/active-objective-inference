@@ -266,8 +266,12 @@ function TrialExplorer({
       </table>
     </div>
     <footer className="trial-pagination">
-      <span>{filteredTotal ? `${page * EXPLORER_PAGE_SIZE + 1}–${Math.min((page + 1) * EXPLORER_PAGE_SIZE, filteredTotal)} of ${filteredTotal.toLocaleString()}` : "0 results"}</span>
-      <div><button onClick={() => onPage(page - 1)} disabled={page === 0}><ChevronLeft size={14} />Previous</button><strong>Page {page + 1} / {pageCount}</strong><button onClick={() => onPage(page + 1)} disabled={page + 1 >= pageCount}>Next<ChevronRight size={14} /></button></div>
+      <span className="trial-pagination-range">{filteredTotal ? `${page * EXPLORER_PAGE_SIZE + 1}–${Math.min((page + 1) * EXPLORER_PAGE_SIZE, filteredTotal)} of ${filteredTotal.toLocaleString()}` : "0 results"}</span>
+      <nav aria-label="Archived decision pages">
+        <button onClick={() => onPage(page - 1)} disabled={page === 0}><ChevronLeft size={14} />Previous</button>
+        <strong>Page {page + 1} / {pageCount}</strong>
+        <button onClick={() => onPage(page + 1)} disabled={page + 1 >= pageCount}>Next<ChevronRight size={14} /></button>
+      </nav>
     </footer>
   </section>;
 }
